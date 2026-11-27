@@ -1,0 +1,51 @@
+/* SkyStore custom theme */
+:root {
+  --sky-primary: #5267e8;
+  --sky-primary-dark: #4053ce;
+  --sky-ink: #20243a;
+  --sky-muted: #70778b;
+  --sky-bg: #f5f7fc;
+  --sky-border: #e6e9f2;
+}
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh; display: flex; flex-direction: column;
+  color: var(--sky-ink); background: radial-gradient(circle at 85% 5%, rgba(108,126,255,.10), transparent 26rem), var(--sky-bg);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.site-header { background: rgba(255,255,255,.94); border-bottom: 1px solid var(--sky-border); box-shadow: 0 4px 18px rgba(35,48,95,.035); }
+.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--sky-ink); font-size: 1.35rem; font-weight: 800; letter-spacing: -.04em; text-decoration: none; }
+.brand-mark { display: inline-grid; width: 2.35rem; height: 2.35rem; place-items: center; border-radius: .8rem; color: white; background: linear-gradient(135deg,#7184ff,#4c5edb); box-shadow: 0 7px 16px rgba(82,103,232,.25); }
+.site-nav .btn { border-radius: .75rem; padding: .55rem 1rem; font-weight: 600; }
+.btn-outline-primary { --bs-btn-color: var(--sky-primary); --bs-btn-border-color: #cbd2ff; --bs-btn-hover-bg: var(--sky-primary); --bs-btn-hover-border-color: var(--sky-primary); }
+.hero { position: relative; overflow: hidden; margin: 2.5rem auto 2.25rem; padding: clamp(2.5rem,6vw,5rem) 1.5rem; border: 1px solid white; border-radius: 1.75rem; background: linear-gradient(125deg,#eef1ff 0%,#fff 55%,#eaf7ff 100%); box-shadow: 0 14px 35px rgba(35,48,95,.08); }
+.hero::after { position: absolute; top: -5rem; right: -3rem; width: 19rem; height: 19rem; border: 2.5rem solid rgba(91,111,238,.07); border-radius: 50%; content: ""; }
+.hero-content { position: relative; z-index: 1; max-width: 760px; margin: auto; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: .45rem; margin-bottom: 1rem; padding: .45rem .8rem; border: 1px solid #dce1ff; border-radius: 999px; color: var(--sky-primary-dark); background: white; font-size: .82rem; font-weight: 700; }
+.hero h1 { margin-bottom: 1rem; font-size: clamp(2.5rem,6vw,4.3rem); font-weight: 800; letter-spacing: -.065em; }
+.hero p { max-width: 650px; margin: auto; color: var(--sky-muted); font-size: clamp(1rem,2vw,1.2rem); line-height: 1.75; }
+.section-heading { margin-bottom: 1.4rem; }
+.section-heading h2 { margin-bottom: .35rem; font-size: 1.65rem; font-weight: 750; letter-spacing: -.035em; }
+.section-heading p { margin: 0; color: var(--sky-muted); }
+.product-card { height: 100%; overflow: hidden; border: 1px solid var(--sky-border); border-radius: 1.2rem; background: white; box-shadow: 0 8px 24px rgba(35,48,95,.045); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.product-card:hover { transform: translateY(-5px); border-color: #cbd2ff; box-shadow: 0 14px 35px rgba(35,48,95,.08); }
+.product-card .card-header { padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--sky-border); background: white; }
+.product-card .card-header h4 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.4; }
+.product-card .card-body { display: flex; flex-direction: column; padding: 1.4rem 1.35rem 1.5rem; }
+.product-price { margin: 0 0 1.15rem; color: var(--sky-primary-dark); font-size: 2.35rem; font-weight: 800; letter-spacing: -.06em; }
+.product-features { flex: 1; margin-bottom: 1.5rem; color: var(--sky-muted); font-size: .95rem; line-height: 1.8; }
+.product-features i { color: #6478ef; }
+.btn-buy { width: 100%; padding: .75rem 1rem; border: 0; border-radius: .8rem; color: white; background: linear-gradient(135deg,#687cf2,#4d60dc); font-weight: 700; box-shadow: 0 8px 17px rgba(82,103,232,.2); }
+.btn-buy:hover { color: white; background: linear-gradient(135deg,#596de6,#4053ce); transform: translateY(-1px); }
+.site-footer { margin-top: auto; padding: 2.75rem 0 1.5rem; border-top: 1px solid var(--sky-border); background: white; }
+.footer-brand { color: var(--sky-ink); font-size: 1.15rem; font-weight: 800; }
+.site-footer h5 { margin-bottom: 1rem; font-size: .95rem; font-weight: 750; }
+.site-footer ul { display: grid; gap: .65rem; }
+.site-footer a { color: var(--sky-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--sky-primary); }
+.footer-copy { color: #9298a8; font-size: .85rem; }
+@media (max-width: 575.98px) {
+  .site-nav { gap: .5rem; margin-left: 0 !important; }
+  .site-nav .btn { padding: .45rem .7rem; font-size: .9rem; }
+  .hero { margin-top: 1.25rem; border-radius: 1.2rem; }
+}
