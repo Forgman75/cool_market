@@ -40,6 +40,23 @@
 
 <!-- Основное содержимое -->
 <main class="container py-5">
+    {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissible fade show"
+                role="alert"
+                id="success-message">
+
+                {{ message }}
+
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Закрыть">
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
 
     <!-- Заголовок страницы -->
     <section class="hero mb-5">
@@ -219,6 +236,18 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const message = document.getElementById('success-message');
+
+        if (message) {
+            setTimeout(function () {
+                const alert = bootstrap.Alert.getOrCreateInstance(message);
+                alert.close();
+            }, 5000);
+        }
+    });
+</script>
 
 </body>
 </html>

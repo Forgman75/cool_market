@@ -1,3 +1,4 @@
+import time
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
@@ -16,6 +17,7 @@ def contacts(request):
         print(f"Django получил: Имя={name}, Телефон={phone}, Текст={message_text}")
 
         messages.success(request, f"Спасибо, {name}! Ваше сообщение отправлено.")
+        time.sleep(2)
         return redirect('catalog:contacts') # Возвращаемся на ту же страницу, но через GET
 
      
